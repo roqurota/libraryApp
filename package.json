@@ -1,0 +1,24 @@
+{
+  "name": "libraryapp",
+  "version": "1.0.0",
+  "description": "",
+  "main": "main.js",
+  "scripts": {
+    "dev": "nodemon --exec electron ."
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/roqurota/libraryApp.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/roqurota/libraryApp/issues"
+  },
+  "homepage": "https://github.com/roqurota/libraryApp#readme",
+  "devDependencies": {
+    "electron": "^13.2.1",
+    "electron-packager": "^15.3.0",
+    "nodemon": "^2.0.12"
+  }
+}
