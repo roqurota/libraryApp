@@ -12,6 +12,7 @@ class MainWindow extends BrowserWindow {
             opacity: 1,
             webPreferences: {
               nodeIntegration: true,
+              contextIsolation: false // required is not defined problem fix
             },
           })
 

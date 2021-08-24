@@ -9,5 +9,7 @@ const isDev = process.env.NODE_ENV !== 'production' ? true : false
 let mainWindow
 
 app.on('ready', () => {
-    mainWindow = new MainWindow('index.html', isDev)
+    mainWindow = new MainWindow('./app/index.html', isDev)
 })
+
+app.allowRendererProcessReuse = true
