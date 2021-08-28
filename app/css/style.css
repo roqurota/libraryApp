@@ -14,3 +14,21 @@
     width: 320px;
     height: 240px;
 }
+
+.set-model-path {
+    width: 100px;
+    height: 50px;
+    border-radius: 10px;
+    background-color: cornflowerblue;
+    margin: 10px;
+    transition: background-color .3s ease;
+    text-align: center;
+    line-height: 50px;
+    user-select: none;
+    font-size: 14px;
+    font-family: sans-serif;
+}
+
+.set-model-path:hover {
+    background-color: darksalmon;
+}

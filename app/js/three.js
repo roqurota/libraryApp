@@ -1,5 +1,3 @@
-const path = require('path')
-
 const width = 320
 const height = 240
 const container = document.querySelector('.three-canvas')
@@ -25,7 +23,11 @@ function testModel() {
 function loadFBXModel(){
 	const loader = new THREE.FBXLoader()
 
-	var modelPath = path.join(__dirname, 'assets', 'models', 'fbx', 'girl', 'sketchfab_v002.fbx')
+	// var modelPath = path.join(__dirname, 'assets', 'models', 'fbx', 'girl', 'sketchfab_v002.fbx')
+
+	var modelPath = __dirname + '/assets/models/fbx/girl/sketchfab_v002.fbx'
+
+	console.log(modelPath)
 	
 	loader.load(modelPath, function (fbx) {
 	
@@ -34,37 +36,39 @@ function loadFBXModel(){
 			child.castShadow = true
 		})
 
-		const animationLoader = new THREE.FBXLoader()
-		animationLoader.load(modelPath, anim => {
-			const mixer = new THREE.AnimationMixer(fbx)
-			const idle = mixer.clipAction(anim.animations[0])
-			idle.play()
-		})
+		// const animationLoader = new THREE.FBXLoader()
+		// animationLoader.load(modelPath, anim => {
+		// 	const mixer = new THREE.AnimationMixer(fbx)
+		// 	const idle = mixer.clipAction(anim.animations[0])
+		// 	idle.play()
+		// })
 		scene.add(fbx);
 	});
 }
 
-function loadGLTFModel(){
-	var modelPath = path.join(__dirname, 'assets', 'models', 'gltf', 'bottle', 'scene.gltf')
+function loadGLTFModel(model){
+	// var modelPath = path.join(__dirname, 'assets', 'models', 'gltf', 'girl', 'scene.gltf')
 
-	console.log(modelPath);
+	// var modelPath = __dirname + '/assets/models/gltf/skull/scene.gltf'
 
-	const loader = new THREE.GLTFLoader()
-	loader.load(modelPath, gltf => {
+	// console.log(modelPath);
 
-		console.log(gltf)
+	// const loader = new THREE.GLTFLoader()
+	// loader.load(modelPath, gltf => {
 
-		// gltf.scale.setScalar(.02)
-		gltf.traverse(child => {
-			child.castShadow = true
-		})
-		scene.add(gltf.scene);
-	},
-	xhr => {
-		console.log(xhr);
-	}, err => {
-		console.log(err);
-	})
+	// 	console.log(gltf)
+
+	// 	// gltf.scale.setScalar(.02)
+	// 	// gltf.traverse(child => {
+	// 	// 	child.castShadow = true
+	// 	// })
+	// 	scene.add(gltf.scene);
+	// },
+	// xhr => {
+	// 	// console.log(xhr);
+	// }, err => {
+	// 	console.log(err);
+	// })
 }
 
 var light
